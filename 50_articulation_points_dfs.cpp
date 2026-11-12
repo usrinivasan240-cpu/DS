@@ -1,3 +1,4 @@
+// Q50 AIM: Find articulation points in the specified graph using DFS.
 #include <iostream>
 #include <vector>
 #include <algorithm>
