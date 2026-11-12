@@ -1,3 +1,4 @@
+// Q26 AIM: Build the specified BST, search a key and display inorder, minimum and maximum.
 #include <iostream>
 using namespace std;
 
