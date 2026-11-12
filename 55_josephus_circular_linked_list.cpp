@@ -1,3 +1,4 @@
+// Q55 AIM: Solve the Josephus problem for n=7 and k=3 using a circular linked list.
 #include <iostream>
 using namespace std;
 
