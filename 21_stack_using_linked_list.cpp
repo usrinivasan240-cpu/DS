@@ -1,3 +1,4 @@
+// Q21 AIM: Implement a stack ADT using a linked list with push, pop and display.
 #include <iostream>
 using namespace std;
 
