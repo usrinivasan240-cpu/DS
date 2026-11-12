@@ -1,3 +1,4 @@
+// Q31 AIM: Search for item code 47 using linear search.
 #include <iostream>
 using namespace std;
 
