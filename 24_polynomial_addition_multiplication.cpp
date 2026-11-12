@@ -1,3 +1,4 @@
+// Q24 AIM: Represent polynomials using linked lists and perform addition and multiplication.
 #include <iostream>
 #include <map>
 #include <functional>
