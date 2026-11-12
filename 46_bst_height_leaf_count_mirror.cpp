@@ -1,3 +1,4 @@
+// Q46 AIM: Find BST height and leaf count, then display its mirror.
 #include <iostream>
 #include <algorithm>
 using namespace std;
