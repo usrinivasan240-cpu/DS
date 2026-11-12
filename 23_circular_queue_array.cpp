@@ -1,3 +1,4 @@
+// Q23 AIM: Implement a circular queue using an array with enqueue and dequeue.
 #include <iostream>
 using namespace std;
 
