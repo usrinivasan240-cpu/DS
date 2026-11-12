@@ -1,3 +1,4 @@
+// Q37 AIM: Implement deque insertion and deletion at both ends using an array.
 #include <iostream>
 using namespace std;
 
