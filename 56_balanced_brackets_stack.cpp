@@ -1,3 +1,4 @@
+// Q56 AIM: Check whether brackets in an expression are balanced using a stack.
 #include <iostream>
 #include <stack>
 #include <string>
