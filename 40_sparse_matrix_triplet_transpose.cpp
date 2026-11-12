@@ -1,3 +1,4 @@
+// Q40 AIM: Represent a sparse matrix in triplet form and display its transpose.
 #include <iostream>
 #include <vector>
 #include <tuple>
