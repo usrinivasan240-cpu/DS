@@ -1,3 +1,4 @@
+// Q44 AIM: Subtract two polynomials and evaluate the result for a supplied x.
 #include <iostream>
 #include <map>
 #include <functional>
