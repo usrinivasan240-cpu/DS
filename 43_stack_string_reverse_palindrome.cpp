@@ -1,3 +1,4 @@
+// Q43 AIM: Reverse a string using a stack and check whether it is a palindrome.
 #include <iostream>
 #include <stack>
 #include <string>
