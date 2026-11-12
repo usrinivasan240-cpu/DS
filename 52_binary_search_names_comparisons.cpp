@@ -1,3 +1,4 @@
+// Q52 AIM: Perform binary search on sorted names and count comparisons.
 #include <iostream>
 #include <string>
 #include <vector>
