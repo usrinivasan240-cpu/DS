@@ -1,3 +1,4 @@
+// Q54 AIM: Insert the specified keys using quadratic probing in a size-10 hash table.
 #include <iostream>
 using namespace std;
 
