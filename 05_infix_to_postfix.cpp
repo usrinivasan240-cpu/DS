@@ -1,45 +1,70 @@
-// Q5 AIM: Convert infix to postfix using stack; ^ is right-associative.
+// Q5 AIM: Convert the four specified infix expressions to postfix using a stack.
 #include <iostream>
 #include <stack>
 #include <string>
 #include <cctype>
 using namespace std;
-int pr(char c){
-    if(c=='^')return 3;
-    if(c=='*'||c=='/')return 2;
-    if(c=='+'||c=='-')return 1;
+
+int precedence(char op)
+{
+    if (op == '^') return 3;
+    if (op == '*' || op == '/') return 2;
+    if (op == '+' || op == '-') return 1;
     return 0;
 }
-string convert(string s){
-    stack<char>st;
-    string out;
-    for(char c:s){
-        if(isspace((unsigned char)c))continue;
-        if(isalnum((unsigned char)c))out+=c;
-        else if(c=='(')st.push(c);
-        else if(c==')'){
-            while(!st.empty()&&st.top()!='('){
-                out+=st.top();
-                st.pop();
+
+string convertToPostfix(const string &infix)
+{
+    stack<char> operators;
+    string postfix;
+
+    for (char ch : infix)
+    {
+        if (isspace(static_cast<unsigned char>(ch))) continue;
+        if (isalnum(static_cast<unsigned char>(ch)))
+            postfix += ch;
+        else if (ch == '(')
+            operators.push(ch);
+        else if (ch == ')')
+        {
+            while (!operators.empty() && operators.top() != '(')
+            {
+                postfix += operators.top();
+                operators.pop();
             }
-            if(!st.empty())st.pop();
+            if (!operators.empty()) operators.pop();
         }
-        else{
-            while(!st.empty()&&st.top()!='('&&(pr(st.top())>pr(c)||(pr(st.top())==pr(c)&&c!='^'))){
-                out+=st.top();
-                st.pop();
+        else
+        {
+            while (!operators.empty() && operators.top() != '(' &&
+                   (precedence(operators.top()) > precedence(ch) ||
+                   (precedence(operators.top()) == precedence(ch) && ch != '^')))
+            {
+                postfix += operators.top();
+                operators.pop();
             }
-            st.push(c);
+            operators.push(ch);
         }
     }
-    while(!st.empty()){
-        out+=st.top();
-        st.pop();
+
+    while (!operators.empty())
+    {
+        postfix += operators.top();
+        operators.pop();
     }
-    return out;
+    return postfix;
 }
-int main(){
-    string s;
-    getline(cin,s);
-    cout<<convert(s)<<'\n';
+
+int main()
+{
+    string expressions[] = {
+        "A*(B+C)/D",
+        "A+B*C-D",
+        "(A-B)*(C+D)/E",
+        "A^B^C"
+    };
+
+    for (const string &expression : expressions)
+        cout << expression << " -> " << convertToPostfix(expression) << endl;
+    return 0;
 }
