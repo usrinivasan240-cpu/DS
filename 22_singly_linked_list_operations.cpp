@@ -50,6 +50,19 @@ public:
         current->next = node;
     }
 
+    void insertEnd(int value)
+    {
+        Node *node = new Node(value);
+        if (!head)
+        {
+            head = node;
+            return;
+        }
+        Node *current = head;
+        while (current->next) current = current->next;
+        current->next = node;
+    }
+
     void search(int key)
     {
         int position = 1;
@@ -94,7 +107,7 @@ int main()
         cout << "1.Beginning 2.End 3.Position 4.Search 5.Delete 6.Display 0.Exit: ";
         cin >> choice;
         if (choice == 1) cin >> value, list.insertAt(1, value);
-        else if (choice == 2) cin >> value, list.insertAt(1000000, value);
+        else if (choice == 2) cin >> value, list.insertEnd(value);
         else if (choice == 3) cin >> position >> value, list.insertAt(position, value);
         else if (choice == 4) cin >> value, list.search(value);
         else if (choice == 5) cin >> value, list.deleteValue(value);
