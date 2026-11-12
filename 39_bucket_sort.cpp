@@ -7,7 +7,7 @@ int main()
 {
     vector<double> values = {0.42, 0.32, 0.23, 0.52, 0.25, 0.47, 0.51};
     const int bucketCount = values.size();
-    vector<double> buckets[bucketCount];
+    vector<vector<double>> buckets(bucketCount);
 
     for (double value : values)
     {
