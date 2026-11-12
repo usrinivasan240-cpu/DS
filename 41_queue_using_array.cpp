@@ -1,4 +1,4 @@
-// Q41 AIM: Implement an array queue with enqueue, dequeue and display.
+// Q41 AIM: Implement a simple array queue with enqueue, dequeue and display.
 #include <iostream>
 #include <string>
 using namespace std;
@@ -7,38 +7,39 @@ class Queue
 {
     static const int SIZE = 5;
     string customers[SIZE];
-    int front = 0, rear = -1, count = 0;
+    int front = 0;
+    int rear = -1;
 
 public:
     void enqueue(const string &name)
     {
-        if (count == SIZE)
+        if (rear == SIZE - 1)
         {
             cout << "Queue is full" << endl;
             return;
         }
-        rear = (rear + 1) % SIZE;
-        customers[rear] = name;
-        count++;
+        customers[++rear] = name;
     }
 
     void dequeue()
     {
-        if (count == 0)
+        if (front > rear)
         {
             cout << "Queue is empty" << endl;
             return;
         }
-        cout << "Served customer: " << customers[front] << endl;
-        front = (front + 1) % SIZE;
-        count--;
+        cout << "Served customer: " << customers[front++] << endl;
     }
 
     void display()
     {
-        if (count == 0) cout << "Queue is empty";
-        for (int i = 0; i < count; i++)
-            cout << customers[(front + i) % SIZE] << " ";
+        if (front > rear)
+        {
+            cout << "Queue is empty" << endl;
+            return;
+        }
+        for (int i = front; i <= rear; i++)
+            cout << customers[i] << " ";
         cout << endl;
     }
 };
@@ -48,13 +49,20 @@ int main()
     Queue q;
     int choice;
     string name;
+
     do
     {
         cout << "1.Enqueue 2.Dequeue 3.Display 0.Exit: ";
         cin >> choice;
-        if (choice == 1) cin >> name, q.enqueue(name);
+        if (choice == 1)
+        {
+            cout << "Customer name: ";
+            cin >> name;
+            q.enqueue(name);
+        }
         else if (choice == 2) q.dequeue();
         else if (choice == 3) q.display();
     } while (choice != 0);
+
     return 0;
 }
