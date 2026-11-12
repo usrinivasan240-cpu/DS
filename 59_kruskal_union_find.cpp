@@ -1,3 +1,4 @@
+// Q59 AIM: Implement Kruskal's MST algorithm using union-find.
 #include <iostream>
 #include <vector>
 #include <algorithm>
