@@ -1,3 +1,4 @@
+// Q51 AIM: Count occurrences of 7 using linear search.
 #include <iostream>
 using namespace std;
 
