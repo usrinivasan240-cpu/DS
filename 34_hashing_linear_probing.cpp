@@ -1,3 +1,4 @@
+// Q34 AIM: Insert the specified keys into a size-10 hash table using linear probing.
 #include <iostream>
 using namespace std;
 
