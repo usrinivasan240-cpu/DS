@@ -1,3 +1,4 @@
+// Q28 AIM: Build a max heap from input and delete the maximum element.
 #include <iostream>
 #include <vector>
 #include <algorithm>
