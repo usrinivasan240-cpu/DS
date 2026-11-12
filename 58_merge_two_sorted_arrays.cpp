@@ -1,3 +1,4 @@
+// Q58 AIM: Merge two sorted arrays into one sorted array.
 #include <iostream>
 #include <vector>
 using namespace std;
