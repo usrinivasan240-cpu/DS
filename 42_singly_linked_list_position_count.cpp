@@ -1,3 +1,4 @@
+// Q42 AIM: Insert and delete linked-list nodes at a position and count the nodes.
 #include <iostream>
 using namespace std;
 
